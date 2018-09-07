@@ -1,0 +1,31 @@
+<!--pages/mine/mine.wxml-->
+<view class='head'>
+  <view style='text-align:center;color: #ffffff;' > 
+    <image src='{{hasUserInfo?userInfo.avatarUrl:"/images/unlogin.png"}}' class='head-img'></image>
+     <view>{{!hasUserInfo && canIUse ? "登录" : userInfo.nickName}}</view> 
+     <button class='login-button' wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> </button>
+  </view>
+</view>
+<view class='mine-list'>
+  <view class='list-item' bindtap='luanchToInfo'>
+    <view style='display:flex;justify-content:center;align-items:center;'>
+      <image src='/images/my-message.png' class='item-img'></image>
+      <text>我的信息</text>
+    </view>
+    <view>></view>
+  </view>
+  <view class='list-item' bindtap='luanchToMyDate'>
+    <view style='display:flex;justify-content:center;align-items:center;'>
+      <image src='/images/my-order.png' class='item-img'></image>
+      <text>我的预约记录</text>
+    </view>
+    <view>></view>
+  </view>
+  <view class='list-item' bindtap='luanchToAreaHistory' wx:if="{{hasUserInfo && userDetail && userDetail.if_su}}">
+    <view style='display:flex;justify-content:center;align-items:center;'>
+      <image src='/images/history-list.png' class='item-img'></image>
+      <text>区域历史记录</text>
+    </view>
+    <view>></view>
+  </view>
+</view>

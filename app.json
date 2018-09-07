@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/area-history/area-history",
+    "pages/mine/mine",
+    "pages/date-tools/date-tools",
+    "pages/my-date/my-date",
+    "pages/my-info/my-info",
+    "pages/date-history/date-history",
+    "pages/tool-info/tool-info",
+    "pages/customer/customer",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "工具售后预约",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#a9b7b7",
+    "selectedColor": "#AB312C",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/home-select.png",
+        "iconPath": "images/home-unselect.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/mime-select.png",
+        "iconPath": "images/mime-unselect.png",
+        "pagePath": "pages/mine/mine",
+        "text": "我的"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+/* pages/date-history/date-history.wxss */
+.history-item{
+  margin: 1rem 0.5rem 1rem 0.5rem;
+  display: flex;
+  align-items: center;
+}
+.user-img{
+  width: 4.64rem;
+  height: 4.64rem;
+  margin-right: 0.5rem;
+}
+.item-right{
+  color: #000000;
+  height: 4.64rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 0.8rem;
+}
+.user-name{
+  color: #ab312c;
+}

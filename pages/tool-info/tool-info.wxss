@@ -1,0 +1,63 @@
+/* pages/tool-info/tool-info.wxss */
+page{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.info-img {
+  width: 100%;
+  height: 12.5rem;
+}
+
+.tool-name {
+  font-size: 0.73rem;
+  color: #000;
+  margin: 1.3rem 0 0 1rem;
+}
+.tool-tip {
+  font-size: 0.73rem;
+  color: #000;
+  margin: 0.5rem 0 0 1rem;
+}
+
+.tool-intro {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.8rem 1rem;
+  word-wrap: break-word;
+  color: #afafaf;
+  font-size: 0.73rem;
+  border-bottom: 1px solid #c9c9c9;
+}
+.tool-comments{
+  padding-bottom: 0.5rem;
+  font-size: 0.73rem;
+  color: #000;
+  margin: 1rem 0 0 1rem;
+  border-bottom: 1px solid #c9c9c9;
+}
+.comments-head{
+  padding-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+.comments-item{
+  padding-bottom:0.3rem;
+}
+.tool-btns{
+  width: 100%;
+  display: flex;
+   margin: 1rem 0; 
+  align-items: center;
+  justify-content: space-around;
+}
+.btn{
+  width: 37%;
+  font-size: 0.85rem;
+  height: 2.29rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ab312c;
+  color: #ffffff;
+}

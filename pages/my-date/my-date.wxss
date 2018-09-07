@@ -1,0 +1,125 @@
+/* pages/my-date/my-date.wxss */
+
+.history-item {
+  margin: 1rem 2% 0 2%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.user-img {
+  width: 4.64rem;
+  height: 4.64rem;
+  margin-right: 2%;
+}
+
+.item-right {
+  color: #000;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 0.7rem;
+}
+
+.user-name {
+  color: #ab312c;
+}
+
+.tip-title {
+  padding: 1rem 0 0 0.5rem;
+  color: #e11f1f;
+  font-size: 0.85rem;
+}
+
+.date-right {
+  display: flex;
+  flex-direction: column;
+  height: 4rem;
+  justify-content: space-around;
+}
+
+.handle-btn {
+  margin-left: 0.2rem;
+  border-radius: 0.1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 1.2rem;
+  font-size: 0.56rem;
+  background-color: #e5e5e5;
+  color: #e11f1f;
+}
+
+.mask {
+  top: 0;
+  width: 100%;
+  min-height: 100%;
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pop {
+  position: relative;
+  opacity: 0;
+  text-align: center;
+  width: 94%;
+  height: 10rem;
+  background-color: #fff;
+  border-radius: 0.2rem;
+}
+
+.pop-active {
+  animation: show 0.8s ease-in-out forwards;
+}
+
+.pop-title {
+  color: #ab312c;
+  padding-top: 0.5rem;
+}
+
+.pop-area {
+  padding: 0 0.2rem;
+  margin: 0.5rem auto;
+  text-align: left;
+  width: 92%;
+  height: 3rem;
+  border: 1px solid #e5e5e5;
+}
+
+.pop-btns {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.pop-btn {
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 2rem;
+  background-color: #ab312c;
+  color: #fff;
+}
+
+@keyframes show {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1.0);
+    opacity: 1;
+  }
+}

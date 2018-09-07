@@ -1,0 +1,21 @@
+<!--pages/tool-info/tool-info.wxml-->
+<view style='flex:1;width:100%'>
+  <image src='{{toolDetail.image}}' class='info-img'>
+  </image>
+  <view class='tool-name'>{{toolDetail.name}}({{toolDetail.dt_num}})</view>
+  <view class='tool-tip'>工具简介：</view>
+  <view class='tool-intro'>
+    {{toolDetail.desc}}
+  </view>
+  <view class='tool-comments'>
+    <scroll-view scroll-y  style="max-height: 10rem;">
+      <view class='comments-head'>评论：</view>
+      <view class='comments-item' wx:for="{{comList}}" wx:if="{{comList.length!=0}}">{{item.user.name}}：{{item.comment}}</view>
+      <view class='comments-item' wx:if="{{comList.length==0}}">暂无评论记录</view>
+    </scroll-view>
+  </view>
+</view>
+<view class='tool-btns'>
+  <button class='btn' bindtap='luanchToHistory'>预约历史</button>
+  <button class='btn' bindtap='luanchTodate'>立即预约</button>
+</view>

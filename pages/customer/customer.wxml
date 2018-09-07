@@ -1,0 +1,16 @@
+<!--pages/customer/customer.wxml-->
+<view class='head'>
+  <view style='text-align:center;color: #ffffff;'>
+    <image src='/images/unlogin.png' class='head-img'></image>
+  </view>
+</view>
+<view class='mine-list'>
+  <view class='list-item'>
+    <image src='/images/base-info.png' class='item-img'></image>
+    <text>基本信息</text>
+  </view>
+  <view class='info-item'>客户：{{client.name}}</view>
+  <view class='info-item'>城市：{{client.city}}</view>
+  <view class='info-item'>区域：{{client.province}}</view>
+  <view class='info-item'>地址：{{client.address}}</view>
+</view>

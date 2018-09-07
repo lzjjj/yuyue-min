@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view wx:if="{{userInfo && userDetail.if_engineer}}">
+  <view class='index-head'>
+    <picker bindchange="bindMultiPickerChange" range="{{objectMultiArray}}" range-key="{{'name'}}">
+      <view class="picker">
+        <view class='picker-view '>{{objectMultiArray[index].name}}</view>
+        <image src='/images/down.png' class='picker-img'></image>
+      </view>
+    </picker>
+    <input class='search-input' placeholder='搜索你想要的工具' placeholder-style='font-size:0.85rem' bindinput='keywordChange' value='{{keyWord}}'></input>
+    <view class='search-button' bindtap='searchTool'>
+      <image src='/images/search.png' class='search-img'></image>
+    </view>
+  </view>
+  <view class='conditions'>
+    <view bindtap='filterTool' data-id='-1' class='{{ toolstype=="" ? " conditions-view conditionsactive" : "conditions-view "}}'>全部</view>
+    <view wx:for="{{conditionsList}}" bindtap='filterTool' data-id='{{item.id}}' class='{{item.id == toolstype ? " conditions-view conditionsactive" : "conditions-view "}}'>{{item.name}}</view>
+  </view>
+  <view class='tools-list' wx:if='{{!showNone}}'>
+    <view class='tool-item' bindtap='luanchToDetail' data-id='{{item.id}}' wx:for="{{toolsList}}">
+      <image src='{{item.image}}' class='tool-img'>
+      </image>
+      <view class='item-right'>
+        <view  class='item-right-up'>
+          <view class='tool-name' style=''>{{item.name}}({{item.dt_num}})</view>
+          <view class='tool-name' style='' wx:if="{{item.latest_city}}">({{item.latest_city}})</view>
+        </view>
+        <view class='tool-name' style='padding-bottom: 0.33rem;'>工具简介：</view>
+        <view class='tool-detail'>{{item.desc}}</view>
+      </view>
+    </view>
+  </view>
+  <view class='no_content' wx:if='{{showNone==true}}'></view>
+</view>
+<view class='no_content' wx:if='{{!userDetail.if_engineer || !userDetail || !userInfo}}'>
+  <view class='title-none'>您暂无权限浏览数据</view>
+</view>

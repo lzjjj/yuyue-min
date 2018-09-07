@@ -1,0 +1,61 @@
+<!--pages/date-tools/date-tools.wxml-->
+<view style='flex:1' wx:if="{{!isSelect}}">
+  <view class='tool-info'>
+    <image src='{{toolDetail.image}}' class='tool-img'></image>
+    <view class='info-right'>
+      <view>{{toolDetail.name}}</view>
+      <view>工具简介：</view>
+      <view class='info-intro'>{{toolDetail.desc}}</view>
+    </view>
+  </view>
+  <view class='date-msg'>
+    <view class='title'>预定信息</view>
+    <picker mode="date" value="{{startDate}}" bindchange="bindStartDateChange">
+      <view class='time'>
+        <image src='/images/start-time.png' class='time-img'></image>
+          <input placeholder='开始使用时间' placeholder-style='font-size:0.8rem' class='label-input' disabled='true' value="{{startDate}}"></input>
+          <image src='/images/time-down.png' class='time-down'></image>
+      </view>
+    </picker>
+    <picker mode="date" value="{{startDate}}" start="{{startDate}}" bindchange="bindEndDateChange">
+      <view class='time'>
+        <image src='/images/end-time.png' class='time-img'></image>
+          <input placeholder='结束使用时间'  class='label-input' placeholder-style='font-size:0.8rem' disabled='true' value="{{endDate}}"></input>
+          <image src='/images/time-down.png' class='time-down'></image>
+      </view>
+    </picker>
+    <view class='time'>
+      <view class='label'>姓名：</view>
+      <input class='label-input' value='{{userDetail.name}}' placeholder='请填写您的联系姓名' placeholder-style='font-size:0.8rem' disabled='true'></input>
+    </view>
+    <view class='time'>
+      <view class='label'>电话：</view>
+      <input class='label-input' value='{{userDetail.mobile}}' placeholder='请填写您的联系电话' placeholder-style='font-size:0.8rem' disabled='true'></input>
+    </view>
+    <view class='time'>
+      <view class='label'>地址：</view>
+      <input class='label-input' placeholder='请填写您的联系地址' placeholder-style='font-size:0.8rem' value='{{selectCustomer.name}}' disabled='true' bindtap='luanchToClientuser'></input>
+    </view>
+  </view>
+</view>
+<button class='btn' wx:if="{{!isSelect}}" bindtap='handDateTool'>提交预约信息</button>
+<view wx:if="{{isSelect}}">
+  <view class='index-head'>
+    <input class='search-input' placeholder='搜索客户信息' placeholder-style='font-size:0.85rem' bindinput='keywordChange'></input>
+    <view class='search-button' bindtap='searchClientuser'>
+      <image src='/images/search.png' class='search-img'></image>
+    </view>
+  </view>
+  <view class='customer-list' wx:if='{{!showNone}}'>
+    <view class='item' wx:for="{{clientuserList}}" bindtap='selectClientuser' data-index='{{index}}'>
+      <view class='item-up'>
+        <view>{{item.name}}</view>
+        <view>{{item.province}}>{{item.city}}</view>
+      </view>
+      <view class='address'>
+        {{item.address}}
+      </view>
+    </view>
+  </view>
+  <view class='no_content' wx:if='{{showNone==true}}'></view>
+</view>

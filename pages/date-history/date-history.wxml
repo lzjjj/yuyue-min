@@ -1,0 +1,12 @@
+ <!--pages/date-history/date-history.wxml-->
+<view wx:if='{{!showNone}}'>
+  <view class='history-item' wx:for="{{historyList}}" data-index='{{index}}' bindtap='showAction'>
+    <image src='{{item.user.image ? item.user.image :"/images/default.jpg"}}' class='user-img'></image>
+    <view class='item-right'>
+      <view class='user-name'>{{item.user.name}}</view>
+      <view>预约时间：{{item.start_times}} ~ {{item.end_times}}</view>
+      <view>客户信息：{{item.client.name}}</view>
+    </view>
+  </view>
+</view>
+<view class='no_content' wx:if='{{showNone}}'></view>

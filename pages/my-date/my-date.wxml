@@ -1,0 +1,27 @@
+<!--pages/my-date/my-date.wxml-->
+<view wx:if='{{!showNone}}' style='padding-bottom:1rem;'>
+<view class='tip-title'>预约记录</view>
+<view class='history-item' wx:for="{{datingList}}" data-index='{{index}}' bindtap='showAction'>
+    <image src='{{item.dtools.image}}' class='user-img'></image>
+    <view class='item-right'>
+      <view class='user-name'>{{item.dtools.name}}({{item.dtools.dt_num}})</view>
+      <view>预约时间：{{item.start_times}} ~ {{item.end_times}}</view>
+      <view>预约地址：{{item.client.name}}</view>
+    </view>
+  <!-- <view class='date-right'>
+    <view class='handle-btn' data-id='{{item.id}}' catchtap='HandleCancel'>取消预约</view>
+    <view class='handle-btn' data-id='{{item.dtools.id}}' catchtap='showPop'>去评价</view>
+  </view> -->
+</view>
+<view class='mask' wx:if="{{isShowPop}}">
+  <view class='{{isShowPop?"pop pop-active":"pop"}}' >
+  <view class='pop-title'>评价</view>
+  <input  class='pop-area' placeholder='说说你对这个工具的感受吧！(限制50字以内)' placeholder-style='font-size:0.8rem' bindinput='changeComment'></input>
+  <view class='pop-btns'>
+  <button class='pop-btn'  bindtap='hidePop'>取消</button>
+  <button class='pop-btn' bindtap='addComment'>提交</button>
+  </view>
+  </view>
+</view>
+</view>
+<view class='no_content' wx:if='{{showNone==true}}'></view>

@@ -1,0 +1,33 @@
+<!--pages/customer/customer.wxml-->
+<view style='flex:1'>
+  <view class='head'>
+    <view style='text-align:center;color: #ffffff;'>
+      <image src='{{userInfo.avatarUrl}}' class='head-img'></image>
+    </view>
+  </view>
+  <view class='mine-list'>
+    <view class='list-item'>
+      <image src='/images/base-info.png' class='item-img'></image>
+      <text>基本信息</text>
+    </view>
+    <view class='info-item'>
+      <view>姓名：</view>
+      <input value='{{userDetail.name ? userDetail.name :"" }}' placeholder='请填写您的姓名' bindinput='changeName'></input>
+    </view>
+    <view class='info-item'>
+      <view>电话：</view>
+      <input value='{{userDetail.mobile ? userDetail.mobile :"" }}' placeholder='请填写您的联系电话'  bindblur='changePhone'></input>
+    </view>
+    <picker bindchange="bindAreaChange" value="{{userDetail.province.id}}" range="{{areaList}}" range-key='name'>
+      <view class='info-item'>
+        <view>区域：</view>
+        <input value='{{userDetail.province.id ? userDetail.province.name :"" }}' placeholder='请选择所属区域' disabled='true'></input>
+      </view>
+    </picker>
+    <!-- <view class='info-item'>
+      <view>地址：</view>
+      <input value='{{userDetail.address ? userDetail.address :"" }}' placeholder='请填写您的联系地址' bindinput='changeAddress'></input>
+    </view> -->
+  </view>
+</view>
+<button class='sure-change' bindtap='updateMoreInfo' wx:if="{{isShowBtn}}">确定修改</button>
