@@ -1,4 +1,4 @@
-const globalUrl = "http://111.230.92.41:8000/"
+const globalUrl = "https://www.asmas.club/"
 let requestUrl = {
   'areaList': globalUrl + 'province/',//获取城市以及区域接口
   'login': globalUrl + 'usr/welogin/',//登录接口
