@@ -30,6 +30,13 @@ Page({
           userInfo: app.globalData.userInfo,
           userDetail: app.globalData.userDetail
         })
+        this.data.locationList.forEach((item,idx) => {
+            if (item.name == this.data.userDetail.province.name) {
+                this.setData({
+                    index: idx
+                  })
+            }
+        })
         this.getToolsList()
       } else {
         wx.showToast({
